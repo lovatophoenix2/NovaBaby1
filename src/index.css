@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@400;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-nova-glow: #ff4d00;
+  --color-nova-dark: #0a0500;
+  --color-nova-accent: #ff8c00;
+}
+
+@layer base {
+  body {
+    @apply bg-nova-dark text-gray-100 font-sans antialiased;
+  }
+}
+
+.nova-gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-nova-glow to-nova-accent;
+}
+
+.nova-glass {
+  @apply bg-black/40 backdrop-blur-md border border-nova-glow/20;
+}
+
+.nova-glow-shadow {
+  box-shadow: 0 0 20px rgba(255, 77, 0, 0.2);
+}
+
+.markdown-body {
+  @apply text-sm leading-relaxed space-y-2;
+}
+
+.markdown-body p {
+  @apply mb-2;
+}
+
+.markdown-body em {
+  @apply text-nova-accent italic;
+}
